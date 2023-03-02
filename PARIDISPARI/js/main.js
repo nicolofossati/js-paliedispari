@@ -28,3 +28,36 @@ while(!cond2){
 }
 
 //Genera un numero compreso tra 1 e 5
+let output = randomIncluded(1,5);
+
+//somma dei due numeri
+let sum = output + input;
+let pdSum = evenOddDetector(sum);
+let outcome = winLose(pd, pdSum); 
+
+alert(`Hai scelto ${pd}, ed il numero ${input}`);
+alert(`Il computer ha estratto ${output} la cui somma con il tuo è ${sum}`);
+alert(`Siccome ${sum} è ${pdSum} e tu hai scelto ${pd}...${outcome}`);
+
+
+
+
+function randomIncluded(min, max){ //estrare un numero compreso tra min e max(inclusi) 
+    return Math.floor(Math.random() * (max - min +1) + min);
+}
+
+function evenOddDetector(value){ //restituisce la stringa "pari" o "dispari"
+    if(value % 2 == 0){ //caso pari
+        return "pari";
+    } else {
+        return "dispari";
+    }
+}
+
+function winLose(pd, pdSum){
+    if(pd == pdSum){
+        return "HAI VINTO!!!";
+    } else {
+        return "HAI PERSO";
+    }
+}
